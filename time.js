@@ -14,14 +14,6 @@ let year = document.getElementById("year")
 days.innerHTML = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
 months.innerHTML = date.getMonth() +1 < 10 ? "0" + (date.getMonth() +1) : date.getMonth() +1;
 year.innerHTML = date.getFullYear();
-
-  // let daty = document.getElementById("date");
-  // daty.innerHTML =
-  //   date.getDate() +
-  //   "-" +
-  //   parseInt(date.getMonth() + 1) +
-  //   "-" +
-  //   date.getFullYear();
 }
 setInterval(date1, 100);
 onload = date1();
