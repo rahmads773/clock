@@ -10,9 +10,7 @@
   --main-transition:.5s;
 }
 body {
-  background: url(background.png);
-  background-size: cover;
-  background-attachment: fixed;
+  background: linear-gradient(to bottom,#A1FFCE,#FAFFD1);
   font-family: 'Cairo', sans-serif;
   color: rgb(9, 65, 43);
 }
@@ -47,10 +45,16 @@ header{
   padding: 18px;
   font-size: 25px;
   color: #000;
-  background-color: rgba(172, 236, 134, 0.356);
-  box-shadow: 0 0 10px rgb(54, 122, 88);
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
+ animation: letter 7s infinite linear;
+}
+@keyframes letter {
+  0%,100%{
+letter-spacing: 0.5px;
+  }
+  50%{
+letter-spacing: 4px;
+font-weight: 600;
+  }
 }
 /* end header */
 /* start main-container */
@@ -61,7 +65,7 @@ header{
 }
 @media (max-width:767px) {
   .main-container{
-    margin: 80px 0;
+    margin: 100px 0;
   }
 }
 /* end main-container */
@@ -76,11 +80,11 @@ main {
   font-family: cursive;
   border-radius: 20px;
   padding: 50px 0;
-  background-color: rgba(172, 236, 134, 0.356);
-  box-shadow: 0 0 20px rgb(54, 122, 88);
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
+  box-shadow: 0 0 20px rgba(54, 122, 88, 0.685);
   transition: var(--main-transition);
+}
+main:hover{
+  box-shadow: unset;
 }
 @media (max-width: 767px) {
   main {
@@ -102,8 +106,12 @@ main article {
   min-width: 245px;
   background-color: #78ffd6;
   border-radius: 20px;
-  box-shadow: 0 0 20px rgb(0, 0, 0);
+  box-shadow: 0 0 20px rgb(0 0 0 / 45%);
   animation: gradient 7s infinite linear;
+  transition: var(--main-transition);
+}
+main article:hover{
+  box-shadow: unset;
 }
 @keyframes gradient {
   0%,100%{
@@ -149,10 +157,6 @@ footer{
   padding: 18px;
   font-size: 18px;
   color: #000;
-  background-color: rgba(172, 236, 134, 0.356);
-  box-shadow: 0 0 10px rgb(54, 122, 88);
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
   /* margin-top: 100px; */
 }
 footer a{
@@ -163,9 +167,16 @@ footer a{
   font-weight: bold;
   margin-left: 10px;
   font-family: cursive;
-  transition: var(--main-transition);
+ animation: myname 3s infinite linear;
 }
-footer a:hover{
-color: rgb(54, 122, 88);
+@keyframes myname {
+  0%,100%{
+    color: rgb(9, 65, 43);
+ opacity: 1;
+  }
+  50%{
+    color: rgb(44, 142, 175);
+opacity: 0.5;
+  }
 }
 /* end main */
