@@ -13,6 +13,7 @@ body {
   background: linear-gradient(to bottom,#A1FFCE,#FAFFD1);
   font-family: 'Cairo', sans-serif;
   color: rgb(9, 65, 43);
+  transition: var(--main-transition);
 }
 .container {
   margin-right: auto;
@@ -63,7 +64,33 @@ font-weight: 600;
   height: calc(100vh - 152.8px);
     position: relative;
 }
-/* end main-container */
+/* start mode */
+.container-mode{
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #0000007d;
+  width: 123px;
+  border-radius: 40px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.main-container img{
+  width: 40px;
+  cursor: pointer;
+  padding: 5px;
+  background-color: white;
+  border-radius: 50%;
+  transition: var(--main-transition);
+}
+.main-container .sun{
+  opacity: 0;
+  background-color: black;
+}
+/* end mode */
 /* start main */
 main {
   position: absolute;
@@ -98,7 +125,7 @@ main .container{
 /* start article */
 main article {
   width: 60%;
-  min-width: 245px;
+  min-width: 250px;
   background-color: #78ffd6;
   border-radius: 20px;
   box-shadow: 0 0 20px rgb(0 0 0 / 45%);
@@ -147,18 +174,19 @@ main article:hover{
     font-weight: bold;
   }
 /* end article */
+/* end main-container */
+/* start footer */
 footer{
   text-align: center;
   padding: 18px;
   font-size: 18px;
   color: #000;
-  /* margin-top: 100px; */
 }
 footer a{
   display: inline-block;
   text-decoration: none;
   color: rgb(9, 65, 43);
-  font-size: 20px;
+  font-size: 21px;
   font-weight: bold;
   margin-left: 10px;
   font-family: cursive;
@@ -167,11 +195,32 @@ footer a{
 @keyframes myname {
   0%,100%{
     color: rgb(9, 65, 43);
- opacity: 1;
   }
   50%{
-    color: rgb(44, 142, 175);
-opacity: 0.5;
+    color: rgb(0, 158, 158);
   }
 }
-/* end main */
+/* end footer */
+/* start dark mode */
+.dark{
+  background: linear-gradient(to bottom,#283048,#859398);
+}
+.dark header{
+  color: white;
+}
+.dark main{
+  box-shadow: 0 0 20px rgb(12 71 102 / 69%);
+}
+.dark main:hover{
+  box-shadow: none;
+}
+.dark .container-mode{
+background-color: rgba(255, 255, 255, 0.616);
+justify-content: flex-end;
+}
+.dark footer{
+  color: white;
+}
+
+/* end dark mode */
+
